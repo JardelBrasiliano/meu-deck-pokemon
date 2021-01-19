@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import logo from '../../assets/logo.jpg';
+import logo from '../../assets/logo.png';
 import { signInRequest } from '../../store/modules/auth/actions';
 
 import './styles.css';
