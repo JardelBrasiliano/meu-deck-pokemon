@@ -58,11 +58,17 @@
   border-bottom: crimson solid 4px;
 }
 .Header-content .Header-content-right .Header-content-right-register {
+  width: 110px;
+  height: 40px;
   background-color: crimson;
-  padding: 10px;
+  color: aqua;
   margin-left: 20px;
-  border-radius: 36%;
+  border-radius: 20px;
   transition: step-start 0.2s;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .Header-content .Header-content-right .Header-content-right-register > a {
   text-decoration: none;
