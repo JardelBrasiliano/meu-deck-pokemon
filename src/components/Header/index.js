@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import logo from '../../assets/logo.png';
 
@@ -16,9 +17,9 @@ export default function Header() {
           <a href="/">Series</a>
         </div>
         <div className="Header-content-right">
-          <a href="/">Login</a>
+          <Link to="/login">Login</Link>
           <div className="Header-content-right-register">
-            <a href="/">Cadastrar</a>
+            <p>Cadastrar</p>
           </div>
         </div>
       </div>
