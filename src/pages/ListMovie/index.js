@@ -7,7 +7,7 @@ import CardMovie from '../../components/CardMovie';
 import Footer from '../../components/Footer';
 
 export default function ListMovie() {
-  const list = [1, 2, 3, 4, 5, 6, 7];
+  const list = [true, true, false, false, false, true, false];
 
   return (
     <>
@@ -15,7 +15,7 @@ export default function ListMovie() {
       <div className="listMovie-list-container">
         <div className="listMovie-list-content">
           {
-          list.map(() => <CardMovie />)
+          list.map((a) => <CardMovie inList={a} />)
         }
         </div>
       </div>
