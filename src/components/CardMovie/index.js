@@ -1,17 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import add from '../../assets/add.svg';
-import addOk from '../../assets/add_ok.svg';
-
 import './styles.css';
 
-export default function CardMovie({ inList }) {
+export default function CardMovie({ name, image }) {
+  // console.log('name', name);
+  // console.log('image', image);
+
   return (
     <div className="cardMovie-container">
       <div className="cardMovie-content">
         <div className="cardMovie-add">
-          <img src={inList ? addOk : add} alt="" />
+          <p>{name}</p>
+          <img src={image} alt="" />
         </div>
       </div>
     </div>
@@ -19,5 +20,7 @@ export default function CardMovie({ inList }) {
 }
 
 CardMovie.propTypes = {
-  inList: PropTypes.bool.isRequired,
+  // inList: PropTypes.bool.isRequired,
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
 };

@@ -1,16 +1,19 @@
 .cardMovie-container {
   width: 237px;
   height: 370px;
-  background: url(https://media.fstatic.com/hD6fE2hKtel8v4KGeXyX7vXyiwM=/290x478/smart/media/movies/covers/2020/09/queens_gambit.jpg)
-    no-repeat center;
+  background: #fff;
   background-size: cover;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .cardMovie-container:hover {
   filter: brightness(80%);
 }
 .cardMovie-add img {
-  width: 50px;
-  height: 50px;
+  width: 220px;
+  height: 220px;
   cursor: pointer;
   fill: aliceblue;
 }

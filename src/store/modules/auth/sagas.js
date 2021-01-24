@@ -19,3 +19,6 @@ export function* signIn({ payload }) {
 export default all([
   takeLatest('@auth/SIGN_IN_REQUEST', signIn),
 ]);
+
+// requisição de lista
+// com o nome ele pega a imagem
