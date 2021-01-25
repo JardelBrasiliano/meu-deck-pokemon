@@ -14,7 +14,10 @@ export default function SignIn() {
       <img src={logo} alt="CL Logo" />
       <input type="text" defaultValue="test@email.com" />
       <input type="password" defaultValue="12345678" />
-      <button type="button" onClick={() => dispatch(signInRequest({ email: '', password: '' }))}>
+      <button
+        type="button"
+        onClick={() => dispatch(signInRequest({ email: '', password: '' }))}
+      >
         Entrar
       </button>
     </div>

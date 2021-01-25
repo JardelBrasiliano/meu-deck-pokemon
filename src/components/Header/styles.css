@@ -1,6 +1,6 @@
 .Header-container {
   width: 100%;
-  height: 60px;
+  height: 10vh;
 
   background: rgb(236, 236, 229);
   display: flex;
@@ -25,42 +25,41 @@
 .Header-content .Header-content-left-logo {
   width: 120px;
   height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+  margin-right: 20px;
 }
 .Header-content .Header-content-left-logo > img {
-  width: 50px;
+  width: 100%;
 }
 .Header-content .Header-content-left a {
   text-decoration: none;
   font-size: 20px;
-  font-family: "Circular-Loom";
+  font-family: 'Circular-Loom';
   color: black;
   margin-right: 20px;
 
   transition: border-bottom step-end 0.2s;
 }
 .Header-content .Header-content-left a:hover {
-  border-bottom: crimson solid 4px;
+  border-bottom: #ffcb05 solid 4px;
 }
 
 .Header-content .Header-content-right > a {
   text-decoration: none;
   font-size: 20px;
-  font-family: "Circular-Loom";
+  font-family: 'Circular-Loom';
   color: black;
   margin-left: 20px;
 
   transition: border-bottom step-end 0.2s;
 }
 .Header-content .Header-content-right > a:hover {
-  border-bottom: crimson solid 4px;
+  border-bottom: #ffcb05 solid 4px;
 }
 .Header-content .Header-content-right .Header-content-right-register {
   width: 110px;
   height: 40px;
-  background-color: crimson;
+  background-color: #ffcb05;
   margin-left: 20px;
   border-radius: 20px;
   transition: step-start 0.2s;
@@ -71,11 +70,11 @@
 
   text-decoration: none;
   font-size: 20px;
-  font-family: "Circular-Loom";
+  font-family: 'Circular-Loom';
   color: black;
   transition: step-start 0.2s;
 }
 .Header-content .Header-content-right .Header-content-right-register:hover {
-  background-color: rgb(46, 45, 45);
+  background-color: #2d70b7;
   color: white;
 }

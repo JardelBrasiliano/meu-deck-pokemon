@@ -4,8 +4,5 @@ import auth from './auth/sagas';
 import mainList from './mainList/sagas';
 
 export default function* rootSaga() {
-  return yield all([
-    auth,
-    mainList,
-  ]);
+  return yield all([auth, mainList]);
 }

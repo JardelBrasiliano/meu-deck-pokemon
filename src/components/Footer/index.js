@@ -7,8 +7,7 @@ export default function Footer() {
     <div className="footer-container">
       <div className="footer-content">
         <p>
-          Algo interesante para colocar no footer feito por:
-          {' '}
+          Meu deck pokemon, feito por:{' '}
           <a href="https://github.com/JardelBrasiliano">Jardel Brasiliano</a>
         </p>
       </div>

@@ -1,5 +1,4 @@
 {
-  
   "env": {
     "browser": true,
     "es2021": true
@@ -19,11 +18,12 @@
     "sourceType": "module"
   },
   "plugins": [
-    "react"
+    "react",
+    "prettier"
   ],
   "rules": {
     "prettier/prettier": "error",
     "react/jsx-filename-extension": [1, {"extensions": [".js", ".jsx"]}],
-    "react/no-array-index-key": false,
+    "react/no-array-index-key": 0
   }
 }

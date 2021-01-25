@@ -9,11 +9,11 @@ export default function CardMovie({ name, image }) {
 
   return (
     <div className="cardMovie-container">
-      <div className="cardMovie-content">
-        <div className="cardMovie-add">
-          <p>{name}</p>
-          <img src={image} alt="" />
-        </div>
+      <div className="cardMovie-image">
+        <img src={image} alt="" />
+      </div>
+      <div className="cardMovie-name">
+        <p>{name}</p>
       </div>
     </div>
   );

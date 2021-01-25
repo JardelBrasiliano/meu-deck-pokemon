@@ -13,8 +13,8 @@ export default function Header() {
           <div className="Header-content-left-logo">
             <img src={logo} alt="" />
           </div>
-          <a href="/">Filmes</a>
-          <a href="/">Series</a>
+          <Link to="/">Pokémons</Link>
+          <Link to="/">Deck rápido</Link>
         </div>
         <div className="Header-content-right">
           <Link to="/login">Login</Link>

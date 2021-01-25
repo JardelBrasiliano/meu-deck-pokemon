@@ -1,8 +1,22 @@
 .cardMovie-container {
-  width: 237px;
-  height: 370px;
-  background: #fff;
+  width: 230px;
+  height: 230px;
+  cursor: pointer;
+  background: #cacffa;
   background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+}
+.cardMovie-name {
+  background-color: burlywood;
+  width: 100%;
+  flex: 1;
+
+  font-size: 28px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 500;
+  color: black;
 
   display: flex;
   align-items: center;
@@ -10,13 +24,16 @@
 }
 .cardMovie-container:hover {
   filter: brightness(80%);
-}
-.cardMovie-add img {
-  width: 220px;
-  height: 220px;
-  cursor: pointer;
-  fill: aliceblue;
-}
-.cardMovie-add img:hover {
   transform: scale(1.02);
+}
+.cardMovie-container .cardMovie-image {
+  width: 100%;
+  height: 80%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cardMovie-container .cardMovie-image img {
+  transform: scale(2);
 }
