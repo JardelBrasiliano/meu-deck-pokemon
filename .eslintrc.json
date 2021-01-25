@@ -1,41 +1,29 @@
 {
-  "parser": "babel-eslint",
+  
   "env": {
     "browser": true,
-    "jest": true
+    "es2021": true
   },
-  "plugins": [
-    "react",
-    "jsx-a11y",
-    "import"
-  ],
+  "parser": "babel-eslint",
   "extends": [
+    "plugin:react/recommended",
     "airbnb",
     "prettier",
     "prettier/react"
   ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react"
+  ],
   "rules": {
-    "jsx-a11y/click-events-have-key-events": "off",
-    "jsx-a11y/no-static-element-interactions": "off",
-    "react/no-array-index-key": "off",
-    "Object.prototype": "off",
-    "checkForEach": false,
-    "react/jsx-filename-extension": [
-      "error",
-      {
-        "extensions": [
-          ".js",
-          ".jsx"
-        ]
-      }
-    ],
-    "global-require": "off",
-    "import/prefer-default-export": "off",
-    "no-unused-expressions": [
-      "error",
-      {
-        "allowTaggedTemplates": true
-      }
-    ]
+    "prettier/prettier": "error",
+    "react/jsx-filename-extension": [1, {"extensions": [".js", ".jsx"]}],
+    "react/no-array-index-key": false,
   }
 }
