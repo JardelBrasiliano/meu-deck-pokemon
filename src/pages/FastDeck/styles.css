@@ -1,0 +1,14 @@
+.fastdeck-list-container {
+  height: 80vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fastdeck-list-content {
+  max-height: 80vh;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 25px;
+}

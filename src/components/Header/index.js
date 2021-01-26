@@ -14,7 +14,7 @@ export default function Header() {
             <img src={logo} alt="" />
           </div>
           <Link to="/">Pokémons</Link>
-          <Link to="/">Deck rápido</Link>
+          <Link to="/my-fast-deck">Deck rápido</Link>
         </div>
         <div className="Header-content-right">
           <Link to="/login">Login</Link>

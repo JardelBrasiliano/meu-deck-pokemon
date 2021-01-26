@@ -11,15 +11,21 @@ export default function SignIn() {
 
   return (
     <div className="sign-in-page">
-      <img src={logo} alt="CL Logo" />
-      <input type="text" defaultValue="test@email.com" />
-      <input type="password" defaultValue="12345678" />
-      <button
-        type="button"
-        onClick={() => dispatch(signInRequest({ email: '', password: '' }))}
-      >
-        Entrar
-      </button>
+      <div className="sign-in-content">
+        <img src={logo} alt="CL Logo" />
+        <input type="text" placeholder="Email" />
+        <input type="password" placeholder="Senha" />
+        <button
+          type="button"
+          onClick={() => dispatch(signInRequest({ email: '', password: '' }))}
+        >
+          Entrar
+        </button>
+        <div className="sign-in-register">
+          <p>Cadastrar</p>
+          {/* <Link to="/cadastro">Cadastrar</Link> */}
+        </div>
+      </div>
     </div>
   );
 }
