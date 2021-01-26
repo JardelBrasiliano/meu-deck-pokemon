@@ -9,7 +9,7 @@ function Routes() {
     <BrowserRouter>
       <Switch>
         <Route path="/" exact component={ListMovie} />
-        <Route path="/:page" exact component={ListMovie} />
+        <Route path="/pokemon/:page" exact component={ListMovie} />
         <Route path="/login" component={SignIn} />
 
         <Route component={() => <h1>Pagina não existe</h1>} />

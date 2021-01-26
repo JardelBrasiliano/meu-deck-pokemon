@@ -7,11 +7,12 @@ import { listPokemonRequest } from '../../store/modules/mainList/actions';
 import './styles.css';
 
 import Header from '../../components/Header';
-import CardMovie from '../../components/CardMovie';
+import CardPokemon from '../../components/CardPokemon';
+import LoadingCardPokemon from '../../components/LoadingCardPokemon';
 import Footer from '../../components/Footer';
 
 export default function ListMovie() {
-  const { listPokemon } = useSelector((state) => state.listPokemon);
+  const { listPokemon, loadingListPokemonRequest } = useSelector((state) => state.listPokemon);
   const { page } = useParams();
 
   const dispatch = useDispatch();
@@ -25,9 +26,9 @@ export default function ListMovie() {
       <div className="listMovie-list-container">
         <div className="listMovie-list-content">
           {
-            listPokemon
-              ? listPokemon.map((pokemon, index) => <CardMovie key={`Key-Card-Movie${index}`} name={pokemon.name} image={pokemon.image} />)
-              : ''
+            !loadingListPokemonRequest
+              ? listPokemon.map((pokemon, index) => <CardPokemon key={`Key-Card-Movie${index}`} name={pokemon.name.substring(0, 1).toUpperCase().concat(pokemon.name.substring(1))} image={pokemon.image || ''} />)
+              : <LoadingCardPokemon />
           }
         </div>
       </div>

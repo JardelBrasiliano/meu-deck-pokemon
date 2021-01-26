@@ -1,0 +1,74 @@
+.loadingCardMovie-container {
+  width: 230px;
+  height: 230px;
+  cursor: pointer;
+  background: linear-gradient(
+    90deg,
+    rgba(54, 57, 63, 1) 20%,
+    rgba(76, 79, 87, 1) 55%,
+    rgba(54, 57, 63, 1) 91%
+  );
+  background-size: 200%;
+
+  display: flex;
+  flex-direction: column;
+
+  animation: gradient 3s ease infinite;
+}
+/* #AFB0B2 */
+.loadingCardMovie-name {
+  background: linear-gradient(
+    90deg,
+    rgba(32, 34, 37, 1) 20%,
+    rgba(48, 51, 55, 1) 55%,
+    rgba(32, 34, 37, 1) 91%
+  );
+  width: 100%;
+  flex: 1;
+
+  font-size: 28px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 500;
+  color: black;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: gradient1 3s ease infinite;
+}
+.loadingCardMovie-container .loadingCardMovie-image {
+  height: 80%;
+}
+.loadingCardMovie-container .cardMovie-image img {
+  transform: scale(2);
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 50% 50%;
+  }
+  75% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 150% 50%;
+  }
+}
+@keyframes gradient1 {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 50% 50%;
+  }
+  75% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 150% 50%;
+  }
+}
