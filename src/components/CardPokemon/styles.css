@@ -39,5 +39,5 @@
   justify-content: center;
 }
 .cardMovie-container .cardMovie-image img {
-  transform: scale(2);
+  transform: scale(1.7);
 }

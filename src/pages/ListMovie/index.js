@@ -14,14 +14,15 @@ import Pagination from '../../components/Pagination';
 import Footer from '../../components/Footer';
 
 export default function ListMovie() {
+
   const { listPokemon, loadingListPokemonRequest } = useSelector((state) => state.listPokemon);
   const { page } = useParams();
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const actualPage = page || 1 ;
-    dispatch(listPokemonRequest({ page: actualPage }));
+    const currentPage = (page || 1 );
+    dispatch(listPokemonRequest({ page: currentPage }));
   }, [page]);
 
   function seedPokemonFastDeck(pokemon) {
@@ -42,10 +43,13 @@ export default function ListMovie() {
                   image={pokemon.image || ''}
                   onClick={() => seedPokemonFastDeck(pokemon)}
                 />)
-              : <LoadingCardPokemon />
+              : <LoadingCardPokemon/>
+          }
+          {
+            listPokemon.length === 0 ? <h1>Essa pagina não existe</h1> : ''
           }
         </div>
-        {listPokemon.length > 0 ? <Pagination /> : ''}  
+        {listPokemon.length > 0 ? <Pagination page={page} /> : ''}  
       </div>
       <Footer />
     </>

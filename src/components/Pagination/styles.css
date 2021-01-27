@@ -28,22 +28,44 @@
   width: 20px;
   height: 100%;
   padding: 0 20px;
+  border: none;
+  background-color: transparent;
 
-  transition: background-color scale 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: scale 0.2s ease;
 }
 .Pagination-back img {
+  width: 20px;
+  height: 100%;
+
   transform: rotate(180deg);
 }
 
 .Pagination-back:hover {
   transform: scale(1.2);
 }
+
 .Pagination-next {
   width: 20px;
   height: 100%;
   padding: 0 20px;
+  border: none;
+  background-color: transparent;
 
-  transition: background-color scale 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: scale 0.2s ease;
+}
+.Pagination-next img {
+  width: 20px;
+  height: 100%;
+
+  transition: scale 0.2s ease;
 }
 .Pagination-next:hover {
   transform: scale(1.2);
