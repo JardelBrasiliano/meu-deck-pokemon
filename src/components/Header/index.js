@@ -13,7 +13,7 @@ export default function Header() {
           <div className="Header-content-left-logo">
             <img src={logo} alt="" />
           </div>
-          <Link to="/">Pokémons</Link>
+          <Link to="/pokemon/">Pokémons</Link>
           <Link to="/my-fast-deck">Deck rápido</Link>
         </div>
         <div className="Header-content-right">

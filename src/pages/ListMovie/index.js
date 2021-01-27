@@ -10,6 +10,7 @@ import './styles.css';
 import Header from '../../components/Header';
 import CardPokemon from '../../components/CardPokemon';
 import LoadingCardPokemon from '../../components/LoadingCardPokemon';
+import Pagination from '../../components/Pagination';
 import Footer from '../../components/Footer';
 
 export default function ListMovie() {
@@ -19,8 +20,9 @@ export default function ListMovie() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(listPokemonRequest({ page }));
-  }, []);
+    const actualPage = page || 1 ;
+    dispatch(listPokemonRequest({ page: actualPage }));
+  }, [page]);
 
   function seedPokemonFastDeck(pokemon) {
     dispatch(addPokemonInDeckFestRequest({ pokemon }));
@@ -43,6 +45,7 @@ export default function ListMovie() {
               : <LoadingCardPokemon />
           }
         </div>
+        {listPokemon.length > 0 ? <Pagination /> : ''}  
       </div>
       <Footer />
     </>

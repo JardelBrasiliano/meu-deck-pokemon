@@ -13,6 +13,7 @@ export default function myFastDeck(state = INITIAL_STATE, action) {
         break;
       }
       case '@myFastDeck/REMOVE_POKEMON_SUCCESS':
+        console.log('removido', action.payload.pokemon);
         break;
       default:
     }

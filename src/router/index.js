@@ -10,9 +10,11 @@ function Routes() {
     <BrowserRouter>
       <Switch>
         <Route path="/" exact component={ListMovie} />
-        <Route path="/pokemon/:page" exact component={ListMovie} />
         <Route path="/login" component={SignIn} />
         <Route path="/my-fast-deck" component={FastDeck} />
+
+        <Route path="/pokemon/" exact component={ListMovie} />
+        <Route path="/pokemon/:page" component={ListMovie} />
 
         <Route component={() => <h1>Pagina não existe</h1>} />
       </Switch>
