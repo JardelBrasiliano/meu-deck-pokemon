@@ -5,9 +5,9 @@ export function addPokemonInDeckFestRequest({ pokemon }) {
   };
 }
 
-export function removePokemonInDeckFestRequest({ pokemon }) {
+export function removePokemonInDeckFestRequest({ pokemon, listPokemon }) {
   return {
     type: '@myFastDeck/REMOVE_POKEMON_SUCCESS',
-    payload: { pokemon },
+    payload: { pokemon, listPokemon },
   };
 }

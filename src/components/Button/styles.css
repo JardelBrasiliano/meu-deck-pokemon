@@ -1,0 +1,35 @@
+.Header-content-right-register {
+  width: 100%;
+  height: 40px;
+  background-color: #ffcb05;
+  border-radius: 20px;
+  transition: step-start 0.2s;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  font-size: 20px;
+  font-family: 'Circular-Loom';
+  color: black;
+  transition: step-start 0.2s;
+}
+.Header-content-right-register:hover {
+  background-color: #2d70b7;
+  color: white;
+}
+.fastdeck-content-button {
+  width: 140px;
+
+  display: flex;
+  align-items: center;
+}
+.fastdeck-container-button {
+  width: 900px;
+  max-width: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}

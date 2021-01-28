@@ -6,16 +6,21 @@ const INITIAL_STATE = {
 export default function myFastDeck(state = INITIAL_STATE, action) {
   /* eslint-disable */
   return produce(state, draft => {
-    /* eslint-enable */
+    
     switch (action.type) {
       case '@myFastDeck/ADD_POKEMON_REQUEST': {
         draft.listPokemon.push(action.payload.listPokemon);
         break;
       }
       case '@myFastDeck/REMOVE_POKEMON_SUCCESS':
-        console.log('removido', action.payload.pokemon);
+        action.payload.listPokemon.forEach((element,index) => {
+          if (element.name === action.payload.pokemon.name) {
+            draft.listPokemon.splice(index, 1);
+          }
+        });
         break;
       default:
     }
   });
+  /* eslint-enable */
 }

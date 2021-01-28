@@ -2,13 +2,20 @@
   height: 80vh;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 .fastdeck-list-content {
-  max-height: 80vh;
+  max-height: 71vh;
+  min-height: 57vh;
+  margin-top: 20px;
+
+  max-width: 900px;
+  width: 900px;
 
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   grid-gap: 25px;
 }

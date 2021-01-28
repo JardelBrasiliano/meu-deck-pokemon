@@ -70,3 +70,7 @@
 .Pagination-next:hover {
   transform: scale(1.2);
 }
+#Mid {
+  transform: scale(1.1);
+  border-bottom: #2d70b7 5px solid;
+}

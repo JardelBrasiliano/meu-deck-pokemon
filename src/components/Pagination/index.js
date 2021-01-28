@@ -6,28 +6,29 @@ import iconNext from '../../assets/right-arrow.svg';
 
 import './styles.css';
 
-export default function Pagination({ page }) {
-  const [numberLeft, setNumberLeft] = useState(1);
-  const [numberMid, setNumberMid] = useState(2);
-  const [numberRight, setNumberRight] = useState(3);
+export default function Pagination({ page, urlPokemon, totalPokemon }) {
+  const [numberLeft, setNumberLeft] = useState(null);
+  const [numberMid, setNumberMid] = useState(1);
+  const [numberRight, setNumberRight] = useState(null);
+
+  const maxPage = Math.ceil(totalPokemon / 8);
 
   useEffect(() => {
-    if (+page >= 3 && +page <= 160) {
-      setNumberLeft(+page - 1);
-      setNumberMid(+page);
-      setNumberRight(+page + 1);
-    } else if (+page === 161) {
-      setNumberLeft(+page - 2);
-      setNumberMid(+page - 1);
-      setNumberRight(+page);
-    }
+    setNumberLeft(+page - 1 || 0);
+    setNumberMid(+page);
+    setNumberRight(+page === maxPage ? 0 : +page + 1);
   }, []);
 
-  const maxPage = 161;
   function mudarNumero(e) {
     switch (e.id) {
       case 'Left':
-        if (numberLeft !== 1) {
+        if (!numberLeft) {
+          break;
+        } else if (numberLeft && !numberRight) {
+          setNumberLeft(numberLeft - 1);
+          setNumberMid(numberLeft);
+          setNumberRight(numberMid);
+        } else {
           setNumberLeft(numberLeft - 1);
           setNumberMid(numberMid - 1);
           setNumberRight(numberRight - 1);
@@ -36,7 +37,14 @@ export default function Pagination({ page }) {
       case 'Mid':
         break;
       case 'Right':
-        if (numberRight !== maxPage) {
+        if (!numberRight) {
+          setNumberLeft(maxPage - 1);
+          setNumberMid(maxPage);
+        } else if (maxPage === numberRight) {
+          setNumberLeft(numberLeft + 1);
+          setNumberMid(numberMid + 1);
+          setNumberRight(0);
+        } else {
           setNumberLeft(numberLeft + 1);
           setNumberMid(numberMid + 1);
           setNumberRight(numberRight + 1);
@@ -46,41 +54,44 @@ export default function Pagination({ page }) {
         break;
     }
   }
-
   return (
     <div className="Pagination-container">
       <div className="Pagination-content">
         <Link
-          to={`/pokemon/${numberLeft}`}
+          to={`/${urlPokemon}/${numberLeft || ''}`}
           className="Pagination-back"
           id="Left"
           onClick={(e) => mudarNumero(e.target)}
         >
           <img id="Left" src={iconNext} alt="" />
         </Link>
+
         <Link
-          to={`/pokemon/${numberLeft}`}
+          to={`/${urlPokemon}/${numberLeft}`}
           id="Left"
           onClick={(e) => mudarNumero(e.target)}
         >
-          {numberLeft}
+          {numberLeft || ''}
         </Link>
+
         <Link
-          to={`/pokemon/${numberMid}`}
+          to={`/${urlPokemon}/${numberMid}`}
           id="Mid"
           onClick={(e) => mudarNumero(e.target)}
         >
           {numberMid}
         </Link>
+
         <Link
-          to={`/pokemon/${numberRight}`}
+          to={`/${urlPokemon}/${numberRight}`}
           id="Right"
           onClick={(e) => mudarNumero(e.target)}
         >
-          {numberRight}
+          {numberRight || ''}
         </Link>
+
         <Link
-          to={`/pokemon/${numberRight}`}
+          to={`/${urlPokemon}/${numberRight || maxPage}`}
           className="Pagination-next"
           id="Right"
           onClick={(e) => mudarNumero(e.target)}
@@ -94,4 +105,6 @@ export default function Pagination({ page }) {
 
 Pagination.propTypes = {
   page: PropTypes.string.isRequired,
+  urlPokemon: PropTypes.string.isRequired,
+  totalPokemon: PropTypes.number.isRequired,
 };

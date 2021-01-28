@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 import logo from '../../assets/logo.png';
 
+import Button from '../Button';
+
 import './styles.css';
 
 export default function Header() {
@@ -18,9 +20,7 @@ export default function Header() {
         </div>
         <div className="Header-content-right">
           <Link to="/login">Login</Link>
-          <div className="Header-content-right-register">
-            <p>Cadastrar</p>
-          </div>
+          <Button>Cadastrar</Button>
         </div>
       </div>
     </header>
