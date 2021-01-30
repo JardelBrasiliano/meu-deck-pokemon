@@ -17,3 +17,22 @@ export function signInFailure() {
     type: '@auth/SIGN_IN_FAILURE',
   };
 }
+
+export function registerRequest(name, email, password) {
+  return {
+    type: '@auth/REGISTER_REQUEST',
+    payload: { name, email, password },
+  };
+}
+
+export function registerSuccess() {
+  return {
+    type: '@auth/REGISTER_SUCCESS',
+  };
+}
+
+export function registerFailure() {
+  return {
+    type: '@auth/REGISTER_FAILURE',
+  };
+}

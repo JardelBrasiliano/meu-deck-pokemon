@@ -1,30 +1,88 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import logo from '../../assets/logo.png';
-import { signInRequest } from '../../store/modules/auth/actions';
+import {
+  signInRequest,
+  registerRequest,
+} from '../../store/modules/auth/actions';
 
 import './styles.css';
 
 export default function SignIn() {
-  // const { loadingSignInRequest, isSignedIn, error } = useSelector((state) => state.auth);
+  const { loadingSignInRequest, isSignedIn } = useSelector(
+    (state) => state.auth,
+  );
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('email@email.com');
+  const [password, setPassword] = useState('123456');
+  const [isRegister, setIsRegister] = useState(false);
+
   const dispatch = useDispatch();
 
-  return (
-    <div className="sign-in-page">
-      <div className="sign-in-content">
-        <img src={logo} alt="CL Logo" />
-        <input type="text" placeholder="Email" />
-        <input type="password" placeholder="Senha" />
+  function Buttons() {
+    return (
+      <>
+        {isSignedIn > 0 ? <Redirect to="/" /> : null}
         <button
           type="button"
-          onClick={() => dispatch(signInRequest({ email: '', password: '' }))}
+          onClick={() =>
+            !isRegister
+              ? dispatch(signInRequest(email, password))
+              : setIsRegister(false)
+          }
         >
           Entrar
         </button>
         <div className="sign-in-register">
-          <p>Cadastrar</p>
-          {/* <Link to="/cadastro">Cadastrar</Link> */}
+          <button
+            type="button"
+            onClick={() =>
+              isRegister
+                ? dispatch(registerRequest(name, email, password))
+                : setIsRegister(true)
+            }
+          >
+            Cadastrar
+          </button>
         </div>
+      </>
+    );
+  }
+  return (
+    <div className="sign-in-page">
+      <div className="sign-in-content">
+        <img src={logo} alt="CL Logo" />
+        {isRegister ? (
+          <input
+            type="text"
+            placeholder="Nome"
+            value={name}
+            onChange={(value) => {
+              setName(value.target.value);
+            }}
+          />
+        ) : (
+          ''
+        )}
+        <input
+          type="text"
+          placeholder="Email"
+          value={email}
+          onChange={(value) => {
+            setEmail(value.target.value);
+          }}
+        />
+        <input
+          type="password"
+          placeholder="Senha"
+          value={password}
+          onChange={(value) => {
+            setPassword(value.target.value);
+          }}
+        />
+        {loadingSignInRequest ? <p>Carregando...</p> : <Buttons />}
+        {/* <Link to="/cadastro">Cadastrar</Link> */}
       </div>
     </div>
   );

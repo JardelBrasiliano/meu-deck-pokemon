@@ -35,6 +35,7 @@ export default function FastDeck() {
         ) : (
           ''
         )}
+        {console.log(ifFullList)}
         <div
           className="fastdeck-list-content"
           style={{ display: `${!ifFullList ? 'none' : ''}` }}

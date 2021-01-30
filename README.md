@@ -1,3 +1,6 @@
+<div align="center" >
+  <img src="./src/assets/logo.png" alt="logo" width="200px" />
+</div>
 ## Projeto
 
 Crie seu deck pokemon e compartilhe.

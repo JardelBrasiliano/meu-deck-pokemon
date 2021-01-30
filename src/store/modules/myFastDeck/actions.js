@@ -11,3 +11,10 @@ export function removePokemonInDeckFestRequest({ pokemon, listPokemon }) {
     payload: { pokemon, listPokemon },
   };
 }
+
+export function newListPokemonInDeckFestRequest({ authList }) {
+  return {
+    type: '@myFastDeck/NEW_POKEMON_SUCCESS',
+    payload: { listPokemon: authList },
+  };
+}

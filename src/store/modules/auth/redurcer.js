@@ -17,11 +17,30 @@ export default function auth(state = INITIAL_STATE, action) {
         ...state,
         loadingSignInRequest: false,
         isSignedIn: true,
-        toke: action.payload.token,
+        user: action.payload.user,
+        token: action.payload.token,
       };
     case '@auth/SIGN_IN_FAILURE':
       return {
         ...state,
+        loadingSignInRequest: false,
+        error: true,
+      };
+    // REGISTROS
+    case '@auth/REGISTER_REQUEST':
+      return {
+        ...state,
+        loadingSignInRequest: true,
+      };
+    case '@auth/REGISTER_SUCCESS':
+      return {
+        ...state,
+        loadingSignInRequest: false,
+      };
+    case '@auth/REGISTER_FAILURE':
+      return {
+        ...state,
+        loadingSignInRequest: false,
         error: true,
       };
     default:
