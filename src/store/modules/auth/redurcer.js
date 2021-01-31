@@ -7,6 +7,14 @@ const INITIAL_STATE = {
 
 export default function auth(state = INITIAL_STATE, action) {
   switch (action.type) {
+    case '@auth/LOG_OUT':
+      return {
+        ...state,
+        isSignedIn: false,
+        error: false,
+        token: null,
+        user: '',
+      };
     case '@auth/SIGN_IN_REQUEST':
       return {
         ...state,

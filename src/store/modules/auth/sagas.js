@@ -1,5 +1,6 @@
 import { takeLatest, call, put, all } from 'redux-saga/effects';
 import * as actions from './actions';
+import { newListPokemonInDeckFestRequest } from '../myFastDeck/actions';
 import rsf from '../../../services/apiAuth';
 
 export function* signIn({ payload }) {
@@ -26,6 +27,7 @@ export function* signIn({ payload }) {
       }
       return -1;
     });
+    yield put(newListPokemonInDeckFestRequest(userKey[0].user.fastDeck));
     yield put(actions.signInSuccess(userKey[0].token, userKey[0].user));
   } catch (err) {
     yield put(actions.signInFailure());

@@ -29,13 +29,13 @@ export default function FastDeck() {
         {ifFullList ? (
           <div className="fastdeck-container-button">
             <div className="fastdeck-content-button">
-              <Button>Compartilhar</Button>
+              <Button isSave={false}>Link</Button>
+              <Button isSave>Salvar</Button>
             </div>
           </div>
         ) : (
           ''
         )}
-        {console.log(ifFullList)}
         <div
           className="fastdeck-list-content"
           style={{ display: `${!ifFullList ? 'none' : ''}` }}
