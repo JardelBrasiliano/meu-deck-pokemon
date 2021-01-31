@@ -15,8 +15,6 @@ const myFirebaseApp = firebase.initializeApp({
   measurementId: 'G-HX26PKHB0Z',
 });
 
-/// erro esta messa parte, pqp;
 const rsf = new ReduxSagaFirebase(myFirebaseApp);
 
-// firebase.analytics();
 export default rsf;

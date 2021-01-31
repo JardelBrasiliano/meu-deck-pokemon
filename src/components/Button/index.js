@@ -22,7 +22,9 @@ export default function Button({ children, isSave }) {
         console.log(modification, isSave === false);
         alert('Lista foi atualizada e nao salva!!');
       } else if (!modification && isSave === false) {
-        navigator.clipboard.writeText(`${window.location.href}/id/${token}`);
+        navigator.clipboard.writeText(
+          `http://localhost:3000/my-fast-deck/id/${token}`,
+        );
         alert('Link Salvo na arae de transferencia(COPIAR E COLAR)');
       }
     } else {

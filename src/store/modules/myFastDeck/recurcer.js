@@ -1,4 +1,5 @@
 import produce from 'immer';
+import { types } from './actions';
 
 const INITIAL_STATE = {
   listPokemon: [],
@@ -7,17 +8,17 @@ const INITIAL_STATE = {
 export default function myFastDeck(state = INITIAL_STATE, action) {
   /* eslint-disable */
   return produce(state, draft => {
-    switch (action.type) {
-      case '@myFastDeck/RESET_LIST_POKEMON': {
+    switch (action.type){
+      case types.RESET.SUCCESS: {
         draft.listPokemon = [];
         break;
       }
-      case '@myFastDeck/ADD_POKEMON_REQUEST': {
+      case types.ADD.SUCCESS:{
         draft.listPokemon.push(action.payload.listPokemon);
         draft.modification = true;
         break;
       }
-      case '@myFastDeck/REMOVE_POKEMON_SUCCESS':{
+      case types.REMOVE.SUCCESS:{
         action.payload.listPokemon.forEach((element,index) => {
           if (element.name === action.payload.pokemon.name) {
             draft.listPokemon.splice(index, 1);
@@ -26,20 +27,20 @@ export default function myFastDeck(state = INITIAL_STATE, action) {
         });
         break;
       }
-      case '@myFastDeck/NEW_POKEMON_SUCCESS':{
+      case types.NEW.SUCCESS:{
         draft.listPokemon = action.payload.listPokemon;
         draft.modification = true;
       }
 
 
-      case '@myFastDeck/SEED_FIREBASE_REQUEST':{
+      case types.SEED_FIREBASE.REQUEST:{
         draft.loading = true;
       }
-      case '@myFastDeck/SEED_FIREBASE_SUCCESS':{
+      case types.SEED_FIREBASE.SUCCESS:{
         draft.loading = false;
         draft.modification = false;
       }
-      case '@myFastDeck/SEED_FIREBASE_FAILURE':{
+      case types.SEED_FIREBASE.FAILURE:{
         draft.loading = false;
       }
       default:

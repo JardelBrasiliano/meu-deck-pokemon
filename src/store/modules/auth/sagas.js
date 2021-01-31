@@ -1,6 +1,8 @@
 import { takeLatest, call, put, all } from 'redux-saga/effects';
 import * as actions from './actions';
+
 import { newListPokemonInDeckFestRequest } from '../myFastDeck/actions';
+
 import rsf from '../../../services/apiAuth';
 
 export function* signIn({ payload }) {

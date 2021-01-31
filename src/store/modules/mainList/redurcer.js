@@ -1,3 +1,5 @@
+import { types } from './actions';
+
 const INITIAL_STATE = {
   loadingListPokemonRequest: false,
   listPokemon: [],
@@ -6,18 +8,18 @@ const INITIAL_STATE = {
 
 export default function mainList(state = INITIAL_STATE, action) {
   switch (action.type) {
-    case '@listPokemon/LIST_POKEMON_REQUEST':
+    case types.LISTPOKEMON.REQUEST:
       return {
         ...state,
         loadingListPokemonRequest: true,
       };
-    case '@listPokemon/LIST_POKEMON_SUCCESS':
+    case types.LISTPOKEMON.SUCCESS:
       return {
         ...state,
         loadingListPokemonRequest: false,
         listPokemon: action.payload.list,
       };
-    case '@listPokemon/LIST_POKEMON_FAILURE':
+    case types.LISTPOKEMON.FAILURE:
       return {
         ...state,
         error: true,

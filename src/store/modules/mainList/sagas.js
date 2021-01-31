@@ -1,5 +1,6 @@
 import { takeLatest, call, put, all } from 'redux-saga/effects';
 import * as actions from './actions';
+
 import apiListPokemon from '../../../services/apiListPokemon';
 
 export function* listPokemon({ payload }) {
@@ -13,15 +14,17 @@ export function* listPokemon({ payload }) {
         apiListPokemon.get,
         `/pokemon-form/?offset=${offSet}&limit=${limit}`,
       );
+
       const listInitial = data.results;
-      // Pegando dados da api com "yield all" para usar o .map e percorrer todas as informações.
+
       yield put(actions.listPokemonSuccess({ list: listInitial }));
+
       const listPokeminFinal = yield all(
         listInitial.map((pokemon) =>
           call(apiListPokemon.get, `/pokemon-form/${pokemon.name}`),
         ),
       );
-      // Essa parte de baixo deve ser tratana no redurce, pois o saga é apenas para puxar dados da api
+
       const organizedListFinal = listPokeminFinal.map((pokemon) => {
         const perfilPokemon = {
           name: pokemon.data.name,

@@ -51,7 +51,7 @@ export default function ListMovie() {
           {
             !ifFullList? <h1>Essa pagina não existe</h1> : ''
           }
-        {ifFullList? <Pagination urlPokemon="pokemon" page={page || '1'} totalPokemon={1283}/> : ''}  
+        {ifFullList? <Pagination urlPokemon="pokemon" page={+page || 1} totalPokemon={1283}/> : ''}  
       </div>
       <Footer />
     </>

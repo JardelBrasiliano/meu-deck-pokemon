@@ -1,19 +1,27 @@
+export const types = {
+  LISTPOKEMON: {
+    REQUEST: '@listPokemon/LIST_POKEMON_REQUEST',
+    SUCCESS: '@listPokemon/LIST_POKEMON_SUCCESS',
+    FAILURE: '@listPokemon/LIST_POKEMON_FAILURE',
+  },
+};
+
 export function listPokemonRequest({ page }) {
   return {
-    type: '@listPokemon/LIST_POKEMON_REQUEST',
+    type: types.LISTPOKEMON.REQUEST,
     payload: { page },
   };
 }
 
 export function listPokemonSuccess({ list }) {
   return {
-    type: '@listPokemon/LIST_POKEMON_SUCCESS',
+    type: types.LISTPOKEMON.SUCCESS,
     payload: { list },
   };
 }
 
 export function listPokemonFailure() {
   return {
-    type: '@listPokemon/LIST_POKEMON_FAILURE',
+    type: types.LISTPOKEMON.FAILURE,
   };
 }

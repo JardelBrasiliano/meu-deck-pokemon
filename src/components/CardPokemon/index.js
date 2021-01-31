@@ -16,11 +16,6 @@ export default function CardMovie({ name, image, onClick }) {
 
   const { listPokemon } = useSelector((state) => state.myFastDeck);
 
-  const pokemon = {
-    name,
-    image,
-  };
-
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -34,10 +29,14 @@ export default function CardMovie({ name, image, onClick }) {
     }
   }, []);
 
-  function seedPokemonFastDeck(pokemonCurrent) {
+  function seedPokemonFastDeck(currentName, currentImage) {
+    const pokemon = {
+      name: currentName,
+      image: currentImage,
+    };
     setClicou(!clicou);
     if (listPokemon.length === 0) {
-      dispatch(addPokemonInDeckFestRequest({ pokemon: pokemonCurrent }));
+      dispatch(addPokemonInDeckFestRequest({ pokemon }));
       setTaNaLista(true && inListPokemon);
     }
     if (listPokemon.length > 0) {
@@ -45,22 +44,24 @@ export default function CardMovie({ name, image, onClick }) {
         (pokmenoFind) => pokmenoFind.name === name,
       );
       if (!result) {
-        dispatch(addPokemonInDeckFestRequest({ pokemon: pokemonCurrent }));
+        dispatch(addPokemonInDeckFestRequest({ pokemon }));
         setTaNaLista(true && inListPokemon);
       }
     }
   }
 
-  function removePokemonFastDeck(pokemonRemove) {
-    dispatch(
-      removePokemonInDeckFestRequest({ pokemon: pokemonRemove, listPokemon }),
-    );
+  function removePokemonFastDeck(currentName, currentImage) {
+    const pokemon = {
+      name: currentName,
+      image: currentImage,
+    };
+    dispatch(removePokemonInDeckFestRequest({ pokemon, listPokemon }));
   }
 
   const fuction =
     onClick === 'add'
-      ? () => seedPokemonFastDeck(pokemon)
-      : () => removePokemonFastDeck(pokemon);
+      ? () => seedPokemonFastDeck(name, image)
+      : () => removePokemonFastDeck(name, image);
 
   return (
     <button

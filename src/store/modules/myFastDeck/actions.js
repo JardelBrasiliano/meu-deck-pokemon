@@ -1,44 +1,72 @@
+export const types = {
+  RESET: {
+    REQUEST: '',
+    SUCCESS: '@myFastDeck/RESET_LIST_POKEMON',
+    FAILURE: '',
+  },
+  ADD: {
+    REQUEST: '',
+    SUCCESS: '@myFastDeck/ADD_POKEMON_LIST',
+    FAILURE: '',
+  },
+  REMOVE: {
+    REQUEST: '',
+    SUCCESS: '@myFastDeck/REMOVE_POKEMON_LIST',
+    FAILURE: '',
+  },
+  NEW: {
+    REQUEST: '',
+    SUCCESS: '@myFastDeck/NEW_POKEMON_LIST',
+    FAILURE: '',
+  },
+  SEED_FIREBASE: {
+    REQUEST: '@myFastDeck/SEED_FIREBASE_REQUEST',
+    SUCCESS: '@myFastDeck/SEED_FIREBASE_SUCCESS',
+    FAILURE: '@myFastDeck/SEED_FIREBASE_FAILURE',
+  },
+};
+
 export function resetPokemonInDeckFest() {
   return {
-    type: '@myFastDeck/RESET_LIST_POKEMON',
+    type: types.RESET.SUCCESS,
   };
 }
 
 export function addPokemonInDeckFestRequest({ pokemon }) {
   return {
-    type: '@myFastDeck/ADD_POKEMON_REQUEST',
+    type: types.ADD.SUCCESS,
     payload: { listPokemon: pokemon },
   };
 }
 
 export function removePokemonInDeckFestRequest({ pokemon, listPokemon }) {
   return {
-    type: '@myFastDeck/REMOVE_POKEMON_SUCCESS',
+    type: types.REMOVE.SUCCESS,
     payload: { pokemon, listPokemon },
   };
 }
 
 export function newListPokemonInDeckFestRequest(authList) {
   return {
-    type: '@myFastDeck/NEW_POKEMON_SUCCESS',
+    type: types.NEW.SUCCESS,
     payload: { listPokemon: authList },
   };
 }
 
 export function seedListPokemonFirebaseRequest(authList, token) {
   return {
-    type: '@myFastDeck/SEED_FIREBASE_REQUEST',
+    type: types.SEED_FIREBASE.REQUEST,
     payload: { listPokemon: authList, token },
   };
 }
 
 export function seedListPokemonFirebaseSuccess() {
   return {
-    type: '@myFastDeck/SEED_FIREBASE_SUCCESS',
+    type: types.SEED_FIREBASE.SUCCESS,
   };
 }
 export function seedListPokemonFirebaseFailure() {
   return {
-    type: '@myFastDeck/SEED_FIREBASE_FAILURE',
+    type: types.SEED_FIREBASE.FAILURE,
   };
 }
