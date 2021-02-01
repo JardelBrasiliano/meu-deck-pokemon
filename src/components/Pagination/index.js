@@ -17,7 +17,7 @@ export default function Pagination({ page, urlPokemon, totalPokemon }) {
     setNumberLeft(+page - 1 || 0);
     setNumberMid(+page);
     setNumberRight(+page === maxPage ? 0 : +page + 1);
-  }, []);
+  }, [maxPage]);
 
   function mudarNumero(e) {
     switch (e.id) {

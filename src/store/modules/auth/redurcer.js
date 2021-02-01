@@ -1,3 +1,5 @@
+import { types } from './actions';
+
 const INITIAL_STATE = {
   loadingSignInRequest: false,
   isSignedIn: false,
@@ -7,7 +9,7 @@ const INITIAL_STATE = {
 
 export default function auth(state = INITIAL_STATE, action) {
   switch (action.type) {
-    case '@auth/LOG_OUT':
+    case types.LOGOUT.SUCCESS:
       return {
         ...state,
         isSignedIn: false,
@@ -15,12 +17,12 @@ export default function auth(state = INITIAL_STATE, action) {
         token: null,
         user: '',
       };
-    case '@auth/SIGN_IN_REQUEST':
+    case types.LOGIN.REQUEST:
       return {
         ...state,
-        loadingSignInRequest: true,
+        // loadingSignInRequest: true,
       };
-    case '@auth/SIGN_IN_SUCCESS':
+    case types.LOGIN.SUCCESS:
       return {
         ...state,
         loadingSignInRequest: false,
@@ -28,24 +30,23 @@ export default function auth(state = INITIAL_STATE, action) {
         user: action.payload.user,
         token: action.payload.token,
       };
-    case '@auth/SIGN_IN_FAILURE':
+    case types.LOGIN.FAILURE:
       return {
         ...state,
         loadingSignInRequest: false,
         error: true,
       };
-    // REGISTROS
-    case '@auth/REGISTER_REQUEST':
+    case types.REGISTER.REQUEST:
       return {
         ...state,
         loadingSignInRequest: true,
       };
-    case '@auth/REGISTER_SUCCESS':
+    case types.REGISTER.SUCCESS:
       return {
         ...state,
         loadingSignInRequest: false,
       };
-    case '@auth/REGISTER_FAILURE':
+    case types.REGISTER.FAILURE:
       return {
         ...state,
         loadingSignInRequest: false,

@@ -5,18 +5,16 @@ import '@firebase/firestore';
 import ReduxSagaFirebase from 'redux-saga-firebase';
 
 const myFirebaseApp = firebase.initializeApp({
-  apiKey: 'AIzaSyBIeLb6qrJz9zuIsM8nsvogDvyHIFMbhDo',
-  authDomain: 'meu-deck-pokemon.firebaseapp.com',
-  databaseURL: 'https://meu-deck-pokemon-default-rtdb.firebaseio.com',
-  projectId: 'meu-deck-pokemon',
-  storageBucket: 'meu-deck-pokemon.appspot.com',
-  messagingSenderId: '1002323149800',
-  appId: '1:1002323149800:web:18745d3b1ef019292c9a5d',
-  measurementId: 'G-HX26PKHB0Z',
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTHO_DOMAIN,
+  databaseURL: process.env.REACT_APP_DATABASE_URL,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
+  measurementId: process.env.RREACT_APP_MEASUREMENTID,
 });
 
-/// erro esta messa parte, pqp;
 const rsf = new ReduxSagaFirebase(myFirebaseApp);
 
-// firebase.analytics();
 export default rsf;

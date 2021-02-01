@@ -18,6 +18,7 @@ function Routes() {
 
         <Route path="/my-fast-deck/id" exact component={FastDeckShare} />
         <Route path="/my-fast-deck/id/:user" component={FastDeckShare} />
+        <Route path="/my-fast-deck/id/:user/:page" component={FastDeckShare} />
 
         <Route path="/my-fast-deck/" exact component={FastDeck} />
         <Route path="/my-fast-deck/:page" component={FastDeck} />

@@ -1,0 +1,13 @@
+.fastdeckmodel-list-content {
+  max-height: 71vh;
+  min-height: 57vh;
+  margin-top: 20px;
+
+  max-width: 900px;
+  width: 900px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 25px;
+}

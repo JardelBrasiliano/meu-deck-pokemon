@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { seedListPokemonFirebaseRequest } from '../../store/modules/myFastDeck/actions';
 
 import './styles.css';
+import 'dotenv/config';
 
 export default function Button({ children, isSave }) {
   const { listPokemon, loading, modification } = useSelector(
@@ -22,7 +23,9 @@ export default function Button({ children, isSave }) {
         console.log(modification, isSave === false);
         alert('Lista foi atualizada e nao salva!!');
       } else if (!modification && isSave === false) {
-        navigator.clipboard.writeText(`${window.location.href}/id/${token}`);
+        navigator.clipboard.writeText(
+          `${process.env.REACT_APP_BASE_URL}/my-fast-deck/id/${token}`,
+        );
         alert('Link Salvo na arae de transferencia(COPIAR E COLAR)');
       }
     } else {

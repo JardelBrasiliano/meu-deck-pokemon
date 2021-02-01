@@ -14,8 +14,8 @@ export default function SignIn() {
     (state) => state.auth,
   );
   const [name, setName] = useState('');
-  const [email, setEmail] = useState('email@email.com');
-  const [password, setPassword] = useState('123456');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [isRegister, setIsRegister] = useState(false);
 
   const dispatch = useDispatch();
