@@ -23,7 +23,10 @@ export default function FastDeck() {
     setCurrentpage(page || 1);
     setIfFullList(listPokemon.length > 0);
   }, [listPokemon, page]);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 77a092721d2265e9053665916de4ecc071de9e12
   return (
     <>
       <Header />

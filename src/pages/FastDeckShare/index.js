@@ -18,6 +18,7 @@ export default function FastDeck() {
     setCurrentpage(page || 1);
   }, [page]);
 
+  console.log(user);
   useEffect(() => {
     firebase
       .database()

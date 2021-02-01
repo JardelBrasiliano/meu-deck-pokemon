@@ -104,7 +104,7 @@ export default function Pagination({ page, urlPokemon, totalPokemon }) {
 }
 
 Pagination.propTypes = {
-  page: PropTypes.string.isRequired,
+  page: PropTypes.number.isRequired,
   urlPokemon: PropTypes.string.isRequired,
   totalPokemon: PropTypes.number.isRequired,
 };
