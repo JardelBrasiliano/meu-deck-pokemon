@@ -21,6 +21,7 @@ function ModelContainerCards({ listPokemon, page, url }) {
         {ifFullList
           ? listPokemon.map((pokemon, index) =>
               index + 1 > page * 8 - 8 && index + 1 <= page * 8 ? (
+<<<<<<< HEAD
                 <>
                   <CardPokemon
                     key={`key-fastdeck-${index}`}
@@ -32,6 +33,17 @@ function ModelContainerCards({ listPokemon, page, url }) {
                     onClick="remove"
                   />
                 </>
+=======
+                <CardPokemon
+                  key={`key-fastdeck-${index}`}
+                  name={pokemon.name
+                    .substring(0, 1)
+                    .toUpperCase()
+                    .concat(pokemon.name.substring(1))}
+                  image={pokemon.image}
+                  onClick="remove"
+                />
+>>>>>>> 77a092721d2265e9053665916de4ecc071de9e12
               ) : (
                 ''
               ),
